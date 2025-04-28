@@ -30,11 +30,11 @@ Key Features:
 
 Password Generation:
 
-- Generates random passwords of a specified length, based on configurable settings.
+- Generates random passwords of a specified length (5-20), based on configurable settings.
 
 - Supports different case types (random, first uppercase, all uppercase, all lowercase).
 
-- Can include numbers and special characters in the generated passwords.
+- Can include numbers, only numbers and special characters in the generated passwords.
 
 - Allows the user to define a keyword that will be included (and "leetified") in the generated passwords.
 
@@ -46,9 +46,9 @@ Brute-Force Attack:
 
 Settings Menu:
 
-- Allows the user to customize the password generation settings (case type, include numbers, include special characters, keyword).
+- Allows the user to customize the password generation settings (case type, include numbers, only numbers, include special characters, keyword).
 
-- Allows the user to set the maximum number of attempts.
+- Allows the user to set the maximum number of attempts (100/500/1000). 
 
 User Interface:
 
@@ -66,4 +66,6 @@ Workflow:
 
 - The program generates random passwords based on the settings and attempts to connect to the Wi-Fi network.
 
-- If a password is found, it is displayed to the user. If no password is found after the maximum number of attempts, an error message is displayed.
+- If a password is found, it is displayed to the user.
+
+- If no password is found after the maximum number of attempts, an error message is displayed.
