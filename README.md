@@ -1,4 +1,4 @@
-Wi-Fi Randomic Brute Force by DavideEDN 
+Wi-Fi Randomic or Dictionary Brute Force by DavideEDN 
 
 (Language: JavaScript | Usage: JS Interpreter)
 
