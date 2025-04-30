@@ -22,50 +22,104 @@ Please, do not use this tool for any malicious or illegal purposes.
 
 ############################
 
-![Alt text](m5stick.jpg)
+![Alt text](images/IMG_20250430_235252.jpg)
 
-Key Features:
+General Features:
 
-- Wi-Fi Network Scanning: Scans for available Wi-Fi networks and allows the user to select a target network (SSID) to attack. It only supports WPA2_PSK and WEP networks.
+- Wi-Fi Network Scanning: Scans for available Wi-Fi networks (only WPA2_PSK and WEP) and lets the user select a target SSID.
 
-Password Generation:
+- User Interface: All interactions are done via dialog boxes and a simulated keyboard.
 
-- Generates random passwords of a specified length (5-20), based on configurable settings.
+- Settings Menu: Allows customization of password generation settings and maximum attempts.
 
-- Supports different case types (random, first uppercase, all uppercase, all lowercase).
+- Progress Display: Shows current attempt, progress, and results/errors via dialogs.
 
-- Can include numbers, only numbers and special characters in the generated passwords.
+- Leetify Function: Optionally "leetifies" passwords by replacing characters with visually similar symbols/numbers.
 
-- Allows the user to define a keyword that will be included (and "leetified") in the generated passwords.
+############################
 
-Brute-Force Attack:
+bf_random Mode: Randomic Brute Force Attack
 
-- Attempts to connect to the selected Wi-Fi network by trying the generated passwords.
+![Alt text](images/IMG_20250430_235337.jpg)
 
-- Displays the progress and results of the attack on the screen using dialog boxes.
+1. Network Selection
 
-Settings Menu:
+- Scan for Networks: User initiates a scan and selects a WPA2_PSK or WEP network to attack.
 
-- Allows the user to customize the password generation settings (case type, include numbers, only numbers, include special characters, keyword).
+2. Password Length Configuration
 
-- Allows the user to set the maximum number of attempts (100/500/1000). 
+- Set Password Length: User chooses the desired password length (between 5 and 20 characters).
 
-User Interface:
+3. Password Generation Settings
 
-- Uses dialog boxes and a simulated keyboard (implemented with dialog choices) for user interaction.
+User can configure:
 
-- "Leetifying" Passwords: Has a function to "leetify" passwords (replacing characters with numbers or symbols that look similar).
+- Case Type: Random, first uppercase, all uppercase, all lowercase.
 
-Workflow:
+- Include Numbers: Yes/No.
 
-- The program scans for available Wi-Fi networks and presents them to the user.
+- Only Numbers: Yes/No (forces numbers only, disables special chars and sets lowercase).
 
-- The user selects a target network to attack.
+- Include Special Characters: Yes/No.
 
-- The user sets the password length and configures the password generation settings.
+- Random Chars Position: Left, right, or mixed relative to the keyword.
 
-- The program generates random passwords based on the settings and attempts to connect to the Wi-Fi network.
+- Keyword: User can set a keyword to include in passwords (which can be leetified).
 
-- If a password is found, it is displayed to the user.
+- Show Keyword: Displays the current keyword.
 
-- If no password is found after the maximum number of attempts, an error message is displayed.
+- Max Attempts: Choose from preset values (10, 25, 50, 100, 250, 500, 750, 1000).
+
+4. Attack Execution (Leetify Option: Before starting, user chooses whether to leetify the keyword.)
+
+Password Generation: For each attempt, a new password is generated based on the settings:
+
+- If a keyword is set, password = keyword (possibly leetified and cased) + random chars (side depends on setting).
+
+- If no keyword, password is fully random.
+
+Connection Attempt: The program tries to connect to the target Wi-Fi using the generated password.
+
+Result Display:
+
+- If successful, the correct password is shown.
+
+- If unsuccessful after max attempts, an error message is displayed.
+
+############################
+
+bf_dict Mode: Dictionary Brute Force Attack
+
+![Alt text](images/IMG_20250430_235410.jpg)
+
+1. Network Selection
+
+- Scan for Networks: User initiates a scan and selects a WPA2_PSK or WEP network to attack.
+
+2. Dictionary Management
+
+- Add Dictionary: User can load one or more password files (dictionaries) from storage.
+
+- Clear Dictionaries: Option to remove all loaded dictionaries.
+
+3. Attack Execution
+
+Start Attack: The program iterates through all loaded dictionaries:
+
+- For each password in the dictionaries, it attempts to connect to the selected Wi-Fi network.
+
+- Progress is shown (current password number, dictionary file name).
+
+Result Display:
+
+- If a password works, it is shown as found and the process stops.
+
+- If none work, an error is shown after all dictionaries are tried.
+
+############################
+
+Summary Table
+
+![Alt text](images/EXCEL_6VmBDNcrhG.png)
+
+With Love, DavideEDN
